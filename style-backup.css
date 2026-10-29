@@ -1,0 +1,368 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #08111f;
+  --panel: #111e31;
+  --panel-light: #192941;
+  --text: #f4f7ff;
+  --muted: #9aabc2;
+  --accent: #7c9cff;
+  --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 30px 18px;
+  background:
+    radial-gradient(ellipse at 15% 5%, #182b50 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 85%, #172b42 0%, transparent 40%),
+    var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 8px 0 35px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffc76b, #ff8b63);
+  color: #182139;
+  font-size: 25px;
+}
+
+.live-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b6c5dc;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #51dfaa;
+  box-shadow: 0 0 12px #51dfaa88;
+}
+
+.hero {
+  padding: 34px 0 30px;
+}
+
+.eyebrow,
+.card-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin-top: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(38px, 7vw, 65px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+}
+
+.hero-description {
+  max-width: 440px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.search-section {
+  margin-top: 10px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: rgba(17, 30, 49, 0.9);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-form:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px #7c9cff18;
+}
+
+.search-icon {
+  padding-left: 10px;
+  color: var(--muted);
+  font-size: 28px;
+}
+
+.search-form input {
+  flex: 1;
+  width: 0;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+}
+
+.search-form input::placeholder {
+  color: #788aa4;
+}
+
+.search-form button {
+  padding: 13px 22px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #90aaff, #6c87f5);
+  color: #0b1730;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.search-form button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.search-form button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+  transform: none;
+}
+
+.message {
+  min-height: 24px;
+  margin: 13px 4px 22px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.weather-card {
+  margin-top: 8px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  background: linear-gradient(145deg, #172943, #101b2d 75%);
+  box-shadow: 0 24px 60px #00000020;
+  animation: appear 0.4s ease both;
+}
+
+.weather-card[hidden] {
+  display: none;
+}
+
+.weather-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.weather-top h2 {
+  margin-top: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(27px, 5vw, 36px);
+}
+
+#weather-description {
+  margin-top: 7px;
+  color: var(--muted);
+  text-transform: capitalize;
+}
+
+#weather-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.temperature-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 18px;
+  margin: 15px 0 30px;
+}
+
+#temperature {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(62px, 12vw, 94px);
+  font-weight: 500;
+  letter-spacing: -4px;
+  line-height: 1.1;
+}
+
+#feels-like {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.detail-card {
+  padding: 18px 15px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #ffffff05;
+}
+
+.detail-icon {
+  font-size: 20px;
+}
+
+.detail-card p {
+  margin: 13px 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.detail-card strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.app-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 48px;
+  padding: 22px 0 8px;
+  border-top: 1px solid var(--border);
+  color: #8293aa;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 18px 14px;
+  }
+
+  .app-header {
+    padding-bottom: 20px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .live-label {
+    font-size: 9px;
+    letter-spacing: 0.7px;
+  }
+
+  .hero {
+    padding-top: 28px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .search-form {
+    gap: 7px;
+  }
+
+  .search-form input {
+    font-size: 12px;
+  }
+
+  .search-form button {
+    padding: 12px 14px;
+  }
+
+  .weather-card {
+    padding: 21px 16px;
+    border-radius: 20px;
+  }
+
+  #weather-icon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .weather-details {
+    gap: 8px;
+  }
+
+  .detail-card {
+    padding: 14px 9px;
+  }
+
+  .detail-card p {
+    font-size: 11px;
+  }
+
+  .detail-card strong {
+    font-size: 15px;
+  }
+
+  .app-footer {
+    flex-direction: column;
+  }
+}
+

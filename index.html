@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check current weather conditions and forecasts for cities around the world.">
+  <title>WeatherNow | Live Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="weather-scene" class="weather-scene clear-scene" aria-hidden="true">
+    <div class="scene-glow"></div>
+    <div class="sun"></div>
+    <div class="cloud cloud-one"></div>
+    <div class="cloud cloud-two"></div>
+    <div class="rain-layer"></div>
+    <div class="snow-layer"></div>
+    <div class="fog-layer"></div>
+    <div class="lightning"></div>
+  </div>
+  <main class="app-container">
+    <header class="app-header">
+      <a href="#" class="brand">
+        <span class="brand-icon">☀</span>
+        <span>WeatherNow</span>
+      </a>
+      <span class="live-label">
+        <span class="status-dot"></span>
+        LIVE WEATHER
+      </span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+      <h1>Weather, wherever<br>life takes you.</h1>
+      <p class="hero-description">
+        Discover current conditions for any city around the world.
+      </p>
+    </section>
+
+    <section class="search-section">
+      <form id="search-form" class="search-form">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="city-input" placeholder="Search a city, e.g. Kolkata" aria-label="Enter city name"
+          required>
+        <button type="submit" id="search-button">Search</button>
+      </form>
+      <p id="message" class="message" role="status" aria-live="polite">
+        Enter a city to discover its weather.
+      </p>
+    </section>
+
+    <section id="weather-card" class="weather-card" hidden>
+      
+<div class="city-photo-wrapper" id="city-photo-wrapper" hidden>
+  <img
+    id="city-image"
+    class="city-image"
+    src=""
+    alt="City landscape"
+    loading="lazy"
+  />
+  <div class="city-photo-caption" id="city-photo-caption"></div>
+</div>
+
+      <div class="weather-top">
+        <div>
+          <p class="card-label">CURRENT WEATHER</p>
+          <h2 id="city-name">City</h2>
+          <p id="weather-description">Weather conditions</p>
+        </div>
+        <img id="weather-icon" src="" alt="Weather icon">
+      </div>
+
+      <div class="temperature-row">
+        <p id="temperature">--°</p>
+        <p id="feels-like">Feels like --°</p>
+      </div>
+
+      <div class="weather-details">
+        <article class="detail-card">
+          <span class="detail-icon">💧</span>
+          <p>Humidity</p>
+          <strong id="humidity">--%</strong>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon">💨</span>
+          <p>Wind speed</p>
+          <strong id="wind-speed">-- m/s</strong>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon">🌡</span>
+          <p>Feels like</p>
+          <strong id="feels-detail">--°C</strong>
+        </article>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>WeatherNow · Built with HTML, CSS & JavaScript</p>
+      <p>Weather data powered by OpenWeather</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
