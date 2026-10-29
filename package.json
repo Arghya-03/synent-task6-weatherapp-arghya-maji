@@ -2,7 +2,7 @@
   "name": "synent-task6-weatherapp-arghya-maji",
   "version": "1.0.0",
   "description": "A responsive weather application built with HTML, CSS, and JavaScript that retrieves current weather information for cities around the world using the OpenWeather API.",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
