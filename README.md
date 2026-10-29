@@ -125,3 +125,14 @@ Synent Technologies — Web Development Internship Program
 ## 📄 License
 
 Created for educational and internship purposes. Check the terms of any external APIs and image services used by the project before redistribution or deployment.
+
+
+## Project Verification Checklist
+
+- [ ] Start the backend server using `npm start`.
+- [ ] Confirm the backend runs at `http://localhost:3000`.
+- [ ] Test weather data using `/api/weather?city=Kolkata`.
+- [ ] Test the city photo endpoint using `/api/city-photo?city=Kolkata&country=IN`.
+- [ ] Open the frontend with Live Server.
+- [ ] Search for different cities and verify the weather updates.
+- [ ] Confirm that `.env` is not committed to the repository.
