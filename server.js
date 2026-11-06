@@ -6,6 +6,19 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
+// Serve the WeatherNow frontend
+app.get("/", (req, res) => {
+    res.sendFile("index.html", { root: __dirname });
+});
+
+app.get("/style.css", (req, res) => {
+    res.sendFile("style.css", { root: __dirname });
+});
+
+app.get("/script.js", (req, res) => {
+    res.sendFile("script.js", { root: __dirname });
+});
+
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
